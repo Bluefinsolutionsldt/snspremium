@@ -6,7 +6,11 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/24/solid";
 
-export default function PremiumSection() {
+interface NextSubProps {
+  onWaitlistClick: () => void;
+}
+
+export default function NextSub({ onWaitlistClick }: NextSubProps) {
   return (
     <section className="bg-black min-h-screen flex items-center py-20 px-4 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
@@ -38,16 +42,27 @@ export default function PremiumSection() {
           {/* Price Section */}
           <div className="space-y-4">
             <div className="flex items-baseline">
-              <span className="text-[#F27321] text-5xl font-bold">$9.99</span>
+              <span className="text-[#F27321] text-5xl font-bold">
+                TZS. 6999/=
+              </span>
               <span className="text-gray-400 ml-2">/month</span>
             </div>
             <p className="text-gray-400">Cancel anytime. No commitments.</p>
           </div>
 
           {/* CTA Button */}
-          <button className="group flex items-center space-x-2 bg-[#F27321] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-[#FF8F4D] hover:scale-105">
-            <span>Get Premium</span>
-            <ArrowRightIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+          <button
+            onClick={onWaitlistClick}
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F27321] to-[#FF8F4D] transition-all duration-300 group-hover:scale-[1.02]"></div>
+            <div className="relative flex items-center justify-center space-x-3 bg-gradient-to-r from-[#F27321] to-[#FF8F4D] px-8 py-4 transition-all duration-300">
+              <span className="font-medium text-white">Get Premium</span>
+              <ArrowRightIcon className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
+            </div>
+
+            {/* Shine effect */}
+            <div className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-[100%] transition-transform duration-1000"></div>
           </button>
         </div>
 

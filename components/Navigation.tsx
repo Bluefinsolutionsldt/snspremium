@@ -4,7 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 
-export default function Navigation() {
+interface NavigationProps {
+  onPricingClick?: () => void;
+  onBetaClick?: () => void;
+}
+
+export default function Navigation({
+  onPricingClick,
+  onBetaClick,
+}: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -20,8 +28,16 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "Pricing", href: "/pricing" },
-    { name: "Beta Tester", href: "/beta" },
+    {
+      name: "Pricing",
+      href: "#pricing",
+      onClick: onPricingClick,
+    },
+    {
+      name: "Beta Tester",
+      href: "#",
+      onClick: onBetaClick,
+    },
   ];
 
   function setMobileMenuOpen(open: boolean): void {
@@ -48,16 +64,16 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                href={link.href}
+                onClick={link.onClick}
                 className={`text-sm font-medium transition-colors hover:text-[#F27321] relative group ${
                   pathname === link.href ? "text-[#F27321]" : "text-white"
                 }`}
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F27321] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+              </button>
             ))}
 
             {/* Login Button */}
@@ -96,17 +112,20 @@ export default function Navigation() {
       <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navLinks.map((link) => (
-            <Link
+            <button
               key={link.name}
-              href={link.href}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
+              onClick={() => {
+                link.onClick?.();
+                setMobileMenuOpen(false);
+              }}
+              className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
                 pathname === link.href
                   ? "text-[#F27321]"
                   : "text-white hover:text-[#F27321]"
               }`}
             >
               {link.name}
-            </Link>
+            </button>
           ))}
           <Link
             href="/login"
