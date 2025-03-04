@@ -1,7 +1,12 @@
 import React from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import {
+  StarIcon,
+  SparklesIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/solid";
 
-export default function CaseStudy() {
+export default function PremiumSection() {
   return (
     <section className="bg-black min-h-screen flex items-center py-20 px-4 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
@@ -9,126 +14,107 @@ export default function CaseStudy() {
         <div className="space-y-8">
           {/* Premium Tag */}
           <div className="inline-block bg-black/30 backdrop-blur-sm border border-[#F27321]/20 rounded-full px-6 py-2">
-            <span className="text-[#F27321] font-medium">PREMIUM INSIGHTS</span>
+            <span className="text-[#F27321] font-medium">SNS PREMIUM</span>
           </div>
 
           {/* Main Title */}
           <h1 className="text-white text-6xl font-bold leading-tight tracking-tight">
-            ELEVATE YOUR
+            Unlock Your
             <br />
-            PRESENCE
+            <span className="text-[#F27321]">Premium</span> Experience
           </h1>
 
           {/* Subtitle */}
           <div className="space-y-6">
             <h2 className="text-white text-3xl font-semibold">
-              Premium Analytics Dashboard
+              Enhanced Features & Benefits
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
-              Unlock powerful insights with our advanced analytics suite. Track
-              engagement, monitor growth, and understand your audience with
-              detailed metrics that matter to your success.
+              Take your social experience to the next level with exclusive
+              features, ad-free browsing, and premium support.
             </p>
           </div>
 
-          {/* Features Section */}
+          {/* Price Section */}
           <div className="space-y-4">
-            <h3 className="text-white text-2xl font-semibold">
-              Performance Metrics
-            </h3>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
-              Access comprehensive performance data, engagement rates, and
-              audience insights. Make data-driven decisions to optimize your
-              content strategy and grow your influence.
-            </p>
+            <div className="flex items-baseline">
+              <span className="text-[#F27321] text-5xl font-bold">$9.99</span>
+              <span className="text-gray-400 ml-2">/month</span>
+            </div>
+            <p className="text-gray-400">Cancel anytime. No commitments.</p>
           </div>
 
           {/* CTA Button */}
           <button className="group flex items-center space-x-2 bg-[#F27321] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-[#FF8F4D] hover:scale-105">
-            <span>Try Beta Access</span>
+            <span>Get Premium</span>
             <ArrowRightIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
 
-        {/* Right Content - Design Preview */}
+        {/* Right Content - Premium Features Preview */}
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-[#F27321]/20 to-transparent rounded-3xl filter blur-3xl"></div>
           <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#F27321]/20">
             <div className="space-y-6">
-              {/* Profile Design Preview */}
+              {/* Feature Cards */}
               <div className="space-y-4">
-                {/* Profile Header */}
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#F27321] to-[#FF8F4D] animate-pulse"></div>
-                  <div className="space-y-1">
-                    <div className="h-4 w-32 bg-white/20 rounded animate-pulse"></div>
-                    <div className="h-3 w-24 bg-white/10 rounded animate-pulse"></div>
-                  </div>
-                </div>
-
-                {/* Content Preview */}
-                <div className="space-y-3">
-                  <div className="h-40 w-full rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-4 group hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                    <div className="flex justify-between items-start">
-                      <div className="space-y-2">
-                        <div className="h-3 w-24 bg-white/20 rounded"></div>
-                        <div className="h-2 w-40 bg-white/10 rounded"></div>
-                      </div>
-                      <div className="flex space-x-2">
-                        <div className="w-8 h-8 rounded-full bg-[#F27321]/20 flex items-center justify-center group-hover:bg-[#F27321]/30 transition-colors">
-                          <span className="text-[#F27321] text-xs">✦</span>
-                        </div>
-                        <div className="w-8 h-8 rounded-full bg-[#F27321]/20 flex items-center justify-center group-hover:bg-[#F27321]/30 transition-colors">
-                          <span className="text-[#F27321] text-xs">⋮</span>
-                        </div>
-                      </div>
+                {/* Ad-Free Experience */}
+                <div className="group bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-3 rounded-full bg-[#F27321]/20 group-hover:bg-[#F27321]/30">
+                      <StarIcon className="w-6 h-6 text-[#F27321]" />
                     </div>
-                  </div>
-
-                  {/* Interactive Elements */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="h-24 rounded-xl bg-gradient-to-br from-[#F27321]/20 to-transparent p-4 hover:from-[#F27321]/30 transition-all duration-300 cursor-pointer">
-                      <div className="space-y-2">
-                        <div className="h-3 w-16 bg-white/20 rounded"></div>
-                        <div className="h-2 w-20 bg-white/10 rounded"></div>
-                      </div>
-                    </div>
-                    <div className="h-24 rounded-xl bg-gradient-to-bl from-[#F27321]/20 to-transparent p-4 hover:from-[#F27321]/30 transition-all duration-300 cursor-pointer">
-                      <div className="space-y-2">
-                        <div className="h-3 w-16 bg-white/20 rounded"></div>
-                        <div className="h-2 w-20 bg-white/10 rounded"></div>
-                      </div>
+                    <div>
+                      <h3 className="text-white font-semibold mb-2">
+                        Ad-Free Experience
+                      </h3>
+                      <p className="text-gray-400">
+                        Enjoy uninterrupted browsing without any advertisements
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Design Elements */}
-                <div className="flex items-center justify-between space-x-4">
-                  <div className="flex space-x-2">
-                    {["#F27321", "#FF8F4D", "#FFFFFF"].map((color, i) => (
-                      <div
-                        key={i}
-                        className="w-6 h-6 rounded-full border border-white/20"
-                        style={{ backgroundColor: color }}
-                      ></div>
-                    ))}
-                  </div>
-                  <div className="flex space-x-2">
-                    <div className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 transition-colors cursor-pointer flex items-center justify-center">
-                      <span className="text-[#F27321] text-xs">Aa</span>
+                {/* Premium Features */}
+                <div className="group bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-3 rounded-full bg-[#F27321]/20 group-hover:bg-[#F27321]/30">
+                      <SparklesIcon className="w-6 h-6 text-[#F27321]" />
                     </div>
-                    <div className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 transition-colors cursor-pointer flex items-center justify-center">
-                      <span className="text-[#F27321] text-xs">⚡</span>
+                    <div>
+                      <h3 className="text-white font-semibold mb-2">
+                        Exclusive Features
+                      </h3>
+                      <p className="text-gray-400">
+                        Access to premium themes, advanced analytics, and more
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Priority Support */}
+                <div className="group bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-3 rounded-full bg-[#F27321]/20 group-hover:bg-[#F27321]/30">
+                      <ShieldCheckIcon className="w-6 h-6 text-[#F27321]" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold mb-2">
+                        Priority Support
+                      </h3>
+                      <p className="text-gray-400">
+                        24/7 dedicated support for premium members
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Theme Selector */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors cursor-pointer">
-                <span className="text-white text-sm">Premium Theme</span>
-                <div className="flex space-x-2">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F27321] to-[#FF8F4D]"></div>
+              {/* Premium Badge */}
+              <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#F27321]/20 to-transparent rounded-lg">
+                <span className="text-white font-medium">Premium Status</span>
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-[#F27321] animate-pulse"></div>
                   <span className="text-[#F27321]">Active</span>
                 </div>
               </div>
