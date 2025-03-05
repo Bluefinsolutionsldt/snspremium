@@ -135,7 +135,7 @@ export default function Download() {
           {/* Left Content */}
           <div className="text-center lg:text-left space-y-6 sm:space-y-8">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Download SNS Mobile
+              Download SNS Premium Mobile App
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-lg mx-auto lg:mx-0">
               Connect with your community on the go. Available for iOS and

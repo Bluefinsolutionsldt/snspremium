@@ -84,10 +84,10 @@ export default function Landing({
         <div className="relative flex items-center px-8 sm:px-[10%] min-h-screen">
           <div className="max-w-4xl">
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center border border-gray-500 rounded-full px-3 py-1">
+              <div className="flex items-center">
                 <img
                   src="/splash-icon-dark.png"
-                  className="h-4 w-4 mx-1"
+                  className="h-12 w-12 mx-1"
                   alt="laurel left"
                 />
               </div>
@@ -116,7 +116,7 @@ export default function Landing({
             </AnimatePresence>
             <div className="flex flex-col sm:flex-row gap-6 mt-8">
               {/* Waitlist Button */}
-              <button
+              {/* <button
                 onClick={onWaitlistClick}
                 className="group relative inline-flex items-center justify-center"
               >
@@ -152,7 +152,7 @@ export default function Landing({
                     />
                   </svg>
                 </div>
-              </button>
+              </button> */}
 
               {/* Beta Tester Button */}
               <button
@@ -162,7 +162,7 @@ export default function Landing({
                 <div className="absolute inset-0 bg-gradient-to-r from-[#F27321] to-[#FF8F4D] transition-all duration-300 group-hover:scale-[1.05]"></div>
                 <div className="relative flex items-center justify-center space-x-3 bg-gradient-to-r from-[#F27321] to-[#FF8F4D] px-8 py-4 transition-all duration-300">
                   <span className="font-semibold text-lg text-white">
-                    Become a Beta Tester
+                    Subscribe
                   </span>
                   <svg
                     className="w-5 h-5 text-white/90 group-hover:translate-x-1 transition-transform duration-300"

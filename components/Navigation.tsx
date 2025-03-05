@@ -57,8 +57,9 @@ export default function Navigation({
             <img
               src="/splash-icon-dark.png"
               alt="Logo"
-              className="h-8 w-auto"
+              className="h-14 w-auto"
             />
+            <h1 className="text-white text-2xl font-bold">SNS Premium</h1>
           </Link>
 
           {/* Desktop Navigation */}

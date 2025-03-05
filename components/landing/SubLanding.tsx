@@ -10,32 +10,32 @@ interface ContentCard {
 
 const contentCards: ContentCard[] = [
   {
-    category: "Exclusive Access",
-    title: "Premium Content",
+    category: "Documentary",
+    title: "US-NAVY-SEALS",
     image: "/US-NAVY-SEALS---square-cover.jpg",
-    network: "SNS",
-    subtitle: "EXCLUSIVE STORIES",
+    network: "",
+    subtitle: "The story of US-Navy Seals",
   },
   {
-    category: "Connect & Share",
-    title: "Social Features",
+    category: "Biblical Documentary",
+    title: "SODOMA NA GOMORA",
     image: "/SODOMA-POTRAIT-cover---.jpg",
-    network: "SNS+",
-    subtitle: "ENHANCED NETWORKING",
+    network: "",
+    subtitle: "The story of Sodom & Gomora",
   },
   {
-    category: "Ad-Free Experience",
-    title: "Premium Experience",
+    category: "Biblical Documentary",
+    title: "NUHU : Safina & Gharika",
     image: "/NUHU-POTRAIT-cover---.jpg",
-    network: "SNS",
-    subtitle: "UNINTERRUPTED",
+    network: "",
+    subtitle: "Noah's Ark & the Flood story",
   },
   {
-    category: "Premium Add-ons",
-    title: "Extra Features",
+    category: "African Tales",
+    title: "KIMO",
     image: "/KIMO--POTRAIT-cover---.jpg",
-    network: "SNS+",
-    subtitle: "ADVANCED TOOLS",
+    network: "",
+    subtitle: "Family struggles & triumphs, for A young man",
   },
 ];
 
@@ -44,11 +44,11 @@ export default function SubLanding() {
     <section className="bg-black text-white py-16 px-4">
       {/* Header Section */}
       <div className="text-center mb-8">
-        <p className="text-[#F27321] text-sm font-medium mb-4">
+        <p className="text-[#F27321] text-[12px] font-medium mb-4">
           INCLUDED IN ALL PREMIUM PLANS
         </p>
         <h2 className="sm:text-5xl text-3xl font-bold mb-6">
-          All The Features You Need
+          All The Content You Need & More
         </h2>
         <p className="text-lg text-gray-400 max-w-3xl mx-auto">
           Access exclusive content, enjoy an ad-free experience, connect with
