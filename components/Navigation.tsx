@@ -34,7 +34,7 @@ export default function Navigation({
       onClick: onPricingClick,
     },
     {
-      name: "Beta Tester",
+      name: "Subscribe",
       href: "#",
       onClick: onBetaClick,
     },

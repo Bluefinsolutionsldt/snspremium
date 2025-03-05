@@ -89,7 +89,7 @@ export default function BetaTesterModal({
         ) : (
           <>
             <h2 className="text-2xl font-bold text-white mb-6">
-              Become a Beta Tester
+              Be the first to know when we launch
             </h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name Input */}
