@@ -99,7 +99,7 @@ export default function Landing({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="text-7xl font-bold text-white mb-6 leading-tight"
+                className="sm:text-7xl text-5xl font-bold text-white mb-6 leading-tight"
               >
                 {contentArray[currentIndex]?.title}
               </motion.h1>

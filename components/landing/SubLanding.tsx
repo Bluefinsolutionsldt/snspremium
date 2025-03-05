@@ -47,7 +47,9 @@ export default function SubLanding() {
         <p className="text-[#F27321] text-sm font-medium mb-4">
           INCLUDED IN ALL PREMIUM PLANS
         </p>
-        <h2 className="text-5xl font-bold mb-6">All The Features You Need</h2>
+        <h2 className="sm:text-5xl text-3xl font-bold mb-6">
+          All The Features You Need
+        </h2>
         <p className="text-lg text-gray-400 max-w-3xl mx-auto">
           Access exclusive content, enjoy an ad-free experience, connect with
           like-minded individuals, and unlock powerful tools to enhance your

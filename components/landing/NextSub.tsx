@@ -22,7 +22,7 @@ export default function NextSub({ onWaitlistClick }: NextSubProps) {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-white text-6xl font-bold leading-tight tracking-tight">
+          <h1 className="sm:text-6xl text-4xl text-white font-bold leading-tight tracking-tight">
             Unlock Your
             <br />
             <span className="text-[#F27321]">Premium</span> Experience
@@ -42,7 +42,7 @@ export default function NextSub({ onWaitlistClick }: NextSubProps) {
           {/* Price Section */}
           <div className="space-y-4">
             <div className="flex items-baseline">
-              <span className="text-[#F27321] text-5xl font-bold">
+              <span className="text-[#F27321] sm:text-5xl text-3xl font-bold">
                 TZS. 6999/=
               </span>
               <span className="text-gray-400 ml-2">/month</span>

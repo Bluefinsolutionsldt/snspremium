@@ -77,13 +77,13 @@ export default function Navigation({
             ))}
 
             {/* Login Button */}
-            <Link
+            {/* <Link
               href="/login"
               className="flex items-center space-x-2 px-4 py-2 rounded-full bg-[#F27321] hover:bg-[#F27321]/80 hover:scale-105 hover:text-white transition-all duration-200"
             >
               <UserCircleIcon className="h-5 w-5" />
               <span>Login</span>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile menu button */}
@@ -127,12 +127,12 @@ export default function Navigation({
               {link.name}
             </button>
           ))}
-          <Link
+          {/* <Link
             href="/login"
             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#F27321]"
           >
             Login
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

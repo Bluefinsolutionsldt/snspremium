@@ -117,7 +117,7 @@ export default function Download() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % phoneImages.length);
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(timer);
   }, []);
@@ -126,71 +126,71 @@ export default function Download() {
     <section className="bg-black relative overflow-hidden">
       {/* Background Gradient Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-[#F27321]/30 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 -right-4 w-72 h-72 bg-[#F27321]/30 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-0 -left-4 w-48 sm:w-72 h-48 sm:h-72 bg-[#F27321]/30 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 -right-4 w-48 sm:w-72 h-48 sm:h-72 bg-[#F27321]/30 rounded-full filter blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 relative">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
-            <h1 className="text-6xl font-bold text-white leading-tight">
+          <div className="text-center lg:text-left space-y-6 sm:space-y-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Download SNS Mobile
             </h1>
-            <p className="text-xl text-gray-400 max-w-lg">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-lg mx-auto lg:mx-0">
               Connect with your community on the go. Available for iOS and
               Android devices.
             </p>
 
             {/* Download Buttons */}
-            <div className="flex flex-wrap gap-4">
-              {/* Google Play Button */}
-              <a href="#" className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#F27321] to-[#FF8F4D] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
-                <button className="relative bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-3 flex items-center space-x-4 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+              {/* App Store Button */}
+              <button className="group relative inline-flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-xl px-6 py-3 transition-all duration-200">
+                <div className="flex items-center space-x-3">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-8 h-8 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                  </svg>
+                  <div className="flex flex-col items-start">
+                    <span className="text-xs text-gray-300">
+                      Download on the
+                    </span>
+                    <span className="text-white font-medium">App Store</span>
+                  </div>
+                </div>
+              </button>
+
+              {/* Play Store Button */}
+              <button className="group relative inline-flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-xl px-6 py-3 transition-all duration-200">
+                <div className="flex items-center space-x-3">
+                  <svg
+                    className="w-8 h-8 text-white"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
                     <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                   </svg>
-                  <div className="text-left">
-                    <p className="text-gray-400 text-xs">GET IT ON</p>
-                    <p className="text-white font-medium">Google Play</p>
+                  <div className="flex flex-col items-start">
+                    <span className="text-xs text-gray-300">GET IT ON</span>
+                    <span className="text-white font-medium">Google Play</span>
                   </div>
-                </button>
-              </a>
-
-              {/* App Store Button */}
-              <a href="#" className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#F27321] to-[#FF8F4D] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
-                <button className="relative bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-3 flex items-center space-x-4 transition-all duration-300">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
-                  </svg>
-                  <div className="text-left">
-                    <p className="text-gray-400 text-xs">Download on the</p>
-                    <p className="text-white font-medium">App Store</p>
-                  </div>
-                </button>
-              </a>
+                </div>
+              </button>
             </div>
           </div>
 
-          {/* Right Content - Phone Mockup with Image Carousel */}
-          <div className="relative">
+          {/* Right Content - Phone Mockup */}
+          <div className="relative mt-8 lg:mt-0">
             {/* Phone Frame */}
-            <div className="relative w-[320px] h-[650px] mx-auto">
+            <div className="relative w-[280px] sm:w-[320px] h-[570px] sm:h-[650px] mx-auto">
               {/* Phone Border */}
-              <div className="absolute inset-0 bg-[#1A1A1A] rounded-[3rem] shadow-xl"></div>
+              <div className="absolute inset-0 bg-[#1A1A1A] rounded-[2.5rem] sm:rounded-[3rem] shadow-xl"></div>
 
               {/* Screen Content */}
-              <div className="absolute inset-[8px] rounded-[2.5rem] overflow-hidden bg-black">
+              <div className="absolute inset-[6px] sm:inset-[8px] rounded-[2.2rem] sm:rounded-[2.5rem] overflow-hidden bg-black">
                 {/* Dynamic Screen Content */}
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -216,21 +216,23 @@ export default function Download() {
               </div>
 
               {/* Notch */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-full"></div>
+              <div className="absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 w-24 sm:w-32 h-5 sm:h-6 bg-black rounded-full"></div>
 
               {/* Side Buttons */}
-              <div className="absolute -right-1 top-24 w-1 h-12 bg-[#0F0F0F] rounded-l-lg"></div>
-              <div className="absolute -left-1 top-24 w-1 h-8 bg-[#0F0F0F] rounded-r-lg"></div>
-              <div className="absolute -left-1 top-36 w-1 h-8 bg-[#0F0F0F] rounded-r-lg"></div>
+              <div className="absolute -right-1 top-20 sm:top-24 w-1 h-10 sm:h-12 bg-[#0F0F0F] rounded-l-lg"></div>
+              <div className="absolute -left-1 top-20 sm:top-24 w-1 h-6 sm:h-8 bg-[#0F0F0F] rounded-r-lg"></div>
+              <div className="absolute -left-1 top-32 sm:top-36 w-1 h-6 sm:h-8 bg-[#0F0F0F] rounded-r-lg"></div>
             </div>
 
             {/* Progress Indicators */}
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="flex justify-center gap-2 mt-6 sm:mt-8">
               {phoneImages.map((_, index) => (
                 <div
                   key={index}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? "bg-[#F27321] w-6" : "bg-white/20"
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-[#F27321] w-6 sm:w-8"
+                      : "bg-white/20 w-1.5"
                   }`}
                 />
               ))}
