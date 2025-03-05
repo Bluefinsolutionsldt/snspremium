@@ -12,29 +12,28 @@ const contentCards: ContentCard[] = [
   {
     category: "Exclusive Access",
     title: "Premium Content",
-    image: "/0_3.png",
+    image: "/US-NAVY-SEALS---square-cover.jpg",
     network: "SNS",
     subtitle: "EXCLUSIVE STORIES",
   },
   {
     category: "Connect & Share",
     title: "Social Features",
-    image: "/Vintage Camera-13.png",
+    image: "/SODOMA-POTRAIT-cover---.jpg",
     network: "SNS+",
     subtitle: "ENHANCED NETWORKING",
   },
   {
     category: "Ad-Free Experience",
     title: "Premium Experience",
-    image:
-      "/karimsalkinho_film_still_1980_style_african_couple_in_crowded_b_e20d01c0-83df-42b8-bc11-27374cbd4d1f.png",
+    image: "/NUHU-POTRAIT-cover---.jpg",
     network: "SNS",
     subtitle: "UNINTERRUPTED",
   },
   {
     category: "Premium Add-ons",
     title: "Extra Features",
-    image: "/0_3.png",
+    image: "/KIMO--POTRAIT-cover---.jpg",
     network: "SNS+",
     subtitle: "ADVANCED TOOLS",
   },

@@ -1,5 +1,15 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+const phoneImages = [
+  "/50-Cent-POTRAIT-cover---.jpg",
+  "/ALNWICK-GARDEN-----POTRAIT-cover---.jpg",
+  "/ALNWICK-GARDEN-----POTRAIT-cover---.jpg",
+  "/BENZEMA-----POTRAIT-cover---.jpg",
+  "/Gharama-KOMBE-LA-dunia-POTRAIT-cover---.jpg",
+];
 
 const LaptopMockup = () => (
   <svg
@@ -102,6 +112,16 @@ const PhoneMockup = () => (
 );
 
 export default function Download() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % phoneImages.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="bg-black relative overflow-hidden">
       {/* Background Gradient Effects */}
@@ -162,16 +182,58 @@ export default function Download() {
             </div>
           </div>
 
-          {/* Right Content - Device Mockups */}
+          {/* Right Content - Phone Mockup with Image Carousel */}
           <div className="relative">
-            {/* Laptop Mockup */}
-            <div className="relative z-20 transform hover:scale-105 transition-transform duration-300">
-              <LaptopMockup />
+            {/* Phone Frame */}
+            <div className="relative w-[320px] h-[650px] mx-auto">
+              {/* Phone Border */}
+              <div className="absolute inset-0 bg-[#1A1A1A] rounded-[3rem] shadow-xl"></div>
+
+              {/* Screen Content */}
+              <div className="absolute inset-[8px] rounded-[2.5rem] overflow-hidden bg-black">
+                {/* Dynamic Screen Content */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="relative w-full h-full"
+                  >
+                    <Image
+                      src={phoneImages[currentIndex]}
+                      alt="App Screen"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Screen Glare Effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>
+              </div>
+
+              {/* Notch */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-full"></div>
+
+              {/* Side Buttons */}
+              <div className="absolute -right-1 top-24 w-1 h-12 bg-[#0F0F0F] rounded-l-lg"></div>
+              <div className="absolute -left-1 top-24 w-1 h-8 bg-[#0F0F0F] rounded-r-lg"></div>
+              <div className="absolute -left-1 top-36 w-1 h-8 bg-[#0F0F0F] rounded-r-lg"></div>
             </div>
 
-            {/* Phone Mockup */}
-            <div className="absolute -left-12 bottom-0 z-30 w-1/3 transform hover:scale-105 transition-transform duration-300">
-              <PhoneMockup />
+            {/* Progress Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {phoneImages.map((_, index) => (
+                <div
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex ? "bg-[#F27321] w-6" : "bg-white/20"
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Decorative Elements */}

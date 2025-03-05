@@ -18,6 +18,26 @@ const contentArray = [
     title: "Watch Original Series & Documentaries in 4K",
     subtitle: "High-quality video content that matters",
   },
+  {
+    title: "Learn from Industry Experts & Visionaries",
+    subtitle: "Masterclasses and workshops from global thought leaders",
+  },
+  {
+    title: "Transform Your Mind with Premium Content",
+    subtitle: "Personalized recommendations based on your interests",
+  },
+  {
+    title: "Experience Entertainment That Elevates",
+    subtitle: "Curated content that enriches your perspective",
+  },
+  {
+    title: "Connect with a Community of Innovators",
+    subtitle: "Join discussions with forward-thinking individuals",
+  },
+  {
+    title: "Unlock Your Potential with SNS Premium",
+    subtitle: "Your gateway to transformative digital experiences",
+  },
 ];
 
 interface LandingProps {
@@ -31,16 +51,24 @@ export default function Landing({
   onWaitlistClick,
   onPricingClick,
 }: LandingProps) {
-  const images = ["/trace.jpeg", "/kendrick.jpeg", "/trace.jpg"];
+  const images = [
+    "/50-cent--wide-cover---.jpg",
+    "/ALNWICK-GARDEN-----wide-cover---.jpg",
+    "/BENZEMA-----wide-cover---.jpg",
+    "/DUME-SURUALI--wide-cover---.jpg",
+    "/Gharama-KOMBE-LA-Dunia-wide-cover---.jpg",
+    "/JACKIE-CHAN-----wide-cover---.jpg",
+    "/KIMO--wide-cover---.jpg",
+    "/MAAJABU-YA-BAHARI-YA-SHETANI--wide-cover---.jpg",
+    "/Mpiganaji wide _ cover.jpg",
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isBetaModalOpen, setBetaModalOpen] = useState(false);
   const [isWaitlistModalOpen, setWaitlistModalOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % contentArray.length);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -73,7 +101,7 @@ export default function Landing({
                 transition={{ duration: 0.5 }}
                 className="text-7xl font-bold text-white mb-6 leading-tight"
               >
-                {contentArray[currentIndex].title}
+                {contentArray[currentIndex]?.title}
               </motion.h1>
               <motion.p
                 key={`p-${currentIndex}`}
@@ -83,7 +111,7 @@ export default function Landing({
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-xl text-gray-300 mb-8"
               >
-                {contentArray[currentIndex].subtitle}
+                {contentArray[currentIndex]?.subtitle}
               </motion.p>
             </AnimatePresence>
             <div className="flex flex-col sm:flex-row gap-6 mt-8">
