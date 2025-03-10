@@ -10,7 +10,7 @@ export default function Pricing() {
             Choose Your <span className="text-[#F27321]">Premium</span> Plan
           </h2>
           <p className="mt-4 text-lg text-gray-400">
-            Select the perfect plan to enhance your social networking experience
+            Select the perfect plan to enhance your streaming experience
           </p>
         </div>
 
@@ -18,18 +18,17 @@ export default function Pricing() {
           {/* Basic Plan */}
           <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#F27321]/50 transition-all duration-300">
             <h3 className="text-xl font-semibold text-white">Fremium</h3>
-            <p className="text-gray-400 mt-2">
-              Essential features to get started
-            </p>
+            <p className="text-gray-400 mt-2">Essential streaming features</p>
             <div className="mt-4">
               <span className="text-4xl font-bold text-white">Free</span>
             </div>
             <ul className="mt-6 space-y-4">
               {[
-                "Basic Profile Customization",
-                "Standard Feed Access",
-                "Limited Posts per Day",
-                "Community Support",
+                "Limited free Content Library",
+                "SD Video Quality",
+                "Ad-Supported Viewing",
+                "Watch on One Device",
+                "Limited Previews",
               ].map((feature) => (
                 <li key={feature} className="flex items-center">
                   <CheckIcon className="h-5 w-5 text-[#F27321]" />
@@ -48,19 +47,19 @@ export default function Pricing() {
               Popular
             </div>
             <h3 className="text-xl font-semibold text-white">Tausi</h3>
-            <p className="text-gray-400 mt-2">Enhanced features & benefits</p>
+            <p className="text-gray-400 mt-2">Enhanced streaming experience</p>
             <div className="mt-4">
-              <span className="text-4xl font-bold text-white">TZS 25,000</span>
+              <span className="text-4xl font-bold text-white">TZS 5,000</span>
               <span className="text-gray-400">/month</span>
             </div>
             <ul className="mt-6 space-y-4">
               {[
+                "Full Premium Content Library",
+                "HD Video Quality",
                 "Ad-Free Experience",
-                "Unlimited Posts",
-                "Premium Themes",
-                "Advanced Analytics",
-                "Priority Support",
-                "Custom Profile URL",
+                "Watch on Two Devices",
+                "Offline Downloads",
+                "Exclusive Documentaries",
               ].map((feature) => (
                 <li key={feature} className="flex items-center">
                   <CheckIcon className="h-5 w-5 text-[#F27321]" />
@@ -76,20 +75,20 @@ export default function Pricing() {
           {/* Business Plan */}
           <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#F27321]/50 transition-all duration-300">
             <h3 className="text-xl font-semibold text-white">Twiga</h3>
-            <p className="text-gray-400 mt-2">More features & benefits</p>
+            <p className="text-gray-400 mt-2">Premium streaming package</p>
             <div className="mt-4">
-              <span className="text-4xl font-bold text-white">TZS 60,000</span>
-              <span className="text-gray-400">/month</span>
+              <span className="text-4xl font-bold text-white">TZS 50,000</span>
+              <span className="text-gray-400">/year</span>
             </div>
             <ul className="mt-6 space-y-4">
               {[
-                "All Premium Features",
-                "Team Management",
-                "API Access",
-                "Dedicated Manager",
-                "Custom Integration",
-                "SLA Agreement",
-                "Team Analytics",
+                "All Tausi Features",
+                "4K Ultra HD Quality",
+                "Watch on Four Devices",
+                "Unlimited Downloads",
+                "Early Access to New Content",
+                "Exclusive Behind-the-Scenes",
+                "Premium Audio Quality",
               ].map((feature) => (
                 <li key={feature} className="flex items-center">
                   <CheckIcon className="h-5 w-5 text-[#F27321]" />

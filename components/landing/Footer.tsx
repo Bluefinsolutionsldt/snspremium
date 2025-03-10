@@ -1,8 +1,42 @@
 import React from "react";
 import Link from "next/link";
 
+// Define types for our links
+type SimpleLink = string;
+type DetailedLink = {
+  name: string;
+  href: string;
+};
+
+type FooterColumn = {
+  title: string;
+  links: SimpleLink[] | DetailedLink[];
+};
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  // Define our footer columns with proper typing
+  const footerColumns: FooterColumn[] = [
+    {
+      title: "Company",
+      links: ["About", "Careers", "Press", "Blog"],
+    },
+    {
+      title: "Resources",
+      links: [
+        { name: "Community", href: "#" },
+        { name: "Help Center", href: "#" },
+        { name: "Terms", href: "/terms-conditions" },
+        { name: "Privacy", href: "/privacy-policy" },
+        { name: "Copyright", href: "/copyright" },
+      ],
+    },
+    {
+      title: "Download",
+      links: ["iOS App", "Android App"],
+    },
+  ];
 
   return (
     <footer className="bg-black border-t border-white/10">
@@ -59,33 +93,36 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          {[
-            {
-              title: "Company",
-              links: ["About", "Careers", "Press", "Blog"],
-            },
-            {
-              title: "Resources",
-              links: ["Community", "Help Center", "Terms", "Privacy"],
-            },
-            {
-              title: "Download",
-              links: ["iOS App", "Android App", "Windows", "Mac"],
-            },
-          ].map((column) => (
+          {footerColumns.map((column) => (
             <div key={column.title} className="space-y-4">
               <h4 className="text-white font-semibold">{column.title}</h4>
               <ul className="space-y-2">
-                {column.links.map((link) => (
-                  <li key={link}>
-                    <Link
-                      href="#"
-                      className="text-gray-400 hover:text-[#F27321] transition-colors duration-300"
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                ))}
+                {column.links.map((link) => {
+                  // Check if link is a string or an object
+                  if (typeof link === "string") {
+                    return (
+                      <li key={link}>
+                        <Link
+                          href="#"
+                          className="text-gray-400 hover:text-[#F27321] transition-colors duration-300"
+                        >
+                          {link}
+                        </Link>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li key={link.name}>
+                        <Link
+                          href={link.href}
+                          className="text-gray-400 hover:text-[#F27321] transition-colors duration-300"
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             </div>
           ))}
@@ -99,19 +136,19 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               <Link
-                href="/privacy-policy"
+                href="/app/privacy-policy"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/terms-conditions"
+                href="/app/terms-conditions"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Terms & Conditions
               </Link>
               <Link
-                href="/copyright"
+                href="/app/copyright"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Copyright
