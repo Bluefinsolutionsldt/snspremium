@@ -12,8 +12,9 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1 space-y-4">
             <h3 className="text-2xl font-bold text-white">SNS</h3>
             <p className="text-gray-400 text-sm">
-              SNS Premium is a social media platform that allows you to connect with your
-              community, share your moments, and explore endless possibilities.
+              SNS Premium is a social media platform that allows you to connect
+              with your community, share your moments, and explore endless
+              possibilities.
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons */}
@@ -98,19 +99,19 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               <Link
-                href="/PrivacyPolicy"
+                href="/privacy-policy"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/Terms&Conditions"
+                href="/terms-conditions"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Terms & Conditions
               </Link>
               <Link
-                href="/Copyright"
+                href="/copyright"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Copyright
