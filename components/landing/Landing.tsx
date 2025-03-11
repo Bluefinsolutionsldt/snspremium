@@ -7,36 +7,36 @@ import WaitlistModal from "./WaitlistModal";
 
 const contentArray = [
   {
-    title: "Premium Podcasts & Shows That Move You Forward",
-    subtitle: "Exclusive content from thought leaders and innovators",
+    title: "Discover African Stories & Documentaries",
+    subtitle: "Exclusive content celebrating our rich cultural heritage",
   },
   {
-    title: "Stories That Inspire, Knowledge That Empowers",
-    subtitle: "Access our curated library of books and audiobooks",
+    title: "Authentic African Tales That Inspire",
+    subtitle: "Stories that connect you to our roots and traditions",
   },
   {
-    title: "Watch Original Series & Documentaries in 4K",
-    subtitle: "High-quality video content that matters",
+    title: "Watch Original African Documentaries in HD",
+    subtitle: "High-quality productions showcasing African excellence",
   },
   {
-    title: "Learn from Industry Experts & Visionaries",
-    subtitle: "Masterclasses and workshops from global thought leaders",
+    title: "Biblical Stories Retold Through African Lens",
+    subtitle: "Timeless narratives with unique cultural perspectives",
   },
   {
-    title: "Transform Your Mind with Premium Content",
-    subtitle: "Personalized recommendations based on your interests",
+    title: "Engaging Podcasts From African Voices",
+    subtitle: "Thought-provoking conversations with African thought leaders",
   },
   {
-    title: "Experience Entertainment That Elevates",
-    subtitle: "Curated content that enriches your perspective",
+    title: "Experience Entertainment That Celebrates Africa",
+    subtitle: "Curated content that showcases our diverse cultures",
   },
   {
-    title: "Connect with a Community of Innovators",
-    subtitle: "Join discussions with forward-thinking individuals",
+    title: "Stream Anywhere, Anytime on Any Device",
+    subtitle: "Access your favorite African content on the go",
   },
   {
-    title: "Unlock Your Potential with SNS Premium",
-    subtitle: "Your gateway to transformative digital experiences",
+    title: "Unlock Premium African Content with SNS Premium",
+    subtitle: "Your gateway to authentic African digital experiences",
   },
 ];
 

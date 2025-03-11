@@ -19,22 +19,31 @@ export default function Footer() {
   // Define our footer columns with proper typing
   const footerColumns: FooterColumn[] = [
     {
-      title: "Company",
-      links: ["About", "Careers", "Press", "Blog"],
+      title: "Explore",
+      links: [
+        { name: "Documentaries", href: "#" },
+        { name: "Podcasts", href: "#" },
+        { name: "African Tales", href: "#" },
+        { name: "Biblical Series", href: "#" },
+      ],
     },
     {
       title: "Resources",
       links: [
-        { name: "Community", href: "#" },
         { name: "Help Center", href: "#" },
-        { name: "Terms", href: "/terms-conditions" },
-        { name: "Privacy", href: "/privacy-policy" },
-        { name: "Copyright", href: "/copyright" },
+        { name: "Streaming Guide", href: "#" },
+        { name: "Terms", href: "/app/terms-conditions" },
+        { name: "Privacy", href: "/app/privacy-policy" },
+        { name: "Copyright", href: "/app/copyright" },
       ],
     },
     {
       title: "Download",
-      links: ["iOS App", "Android App"],
+      links: [
+        { name: "iOS App", href: "#" },
+        { name: "Android App", href: "#" },
+        { name: "Smart TV App", href: "#" },
+      ],
     },
   ];
 
@@ -44,11 +53,11 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-2 md:col-span-1 space-y-4">
-            <h3 className="text-2xl font-bold text-white">SNS</h3>
+            <h3 className="text-2xl font-bold text-white">SNS Premium</h3>
             <p className="text-gray-400 text-sm">
-              SNS Premium is a social media platform that allows you to connect
-              with your community, share your moments, and explore endless
-              possibilities.
+              SNS Premium is your gateway to exclusive African content. Stream
+              documentaries, podcasts, and stories that celebrate our rich
+              heritage and inspire the future.
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons */}
@@ -132,7 +141,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {currentYear} SNS. All rights reserved.
+              © {currentYear} SNS Premium. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link

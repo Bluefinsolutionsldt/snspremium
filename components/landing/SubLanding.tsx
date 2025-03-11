@@ -30,14 +30,7 @@ const documentaryContent: ContentCard[] = [
     subtitle: "The story of becoming",
     rating: "4.5",
   },
-  {
-    category: "Documentary",
-    title: "MASAI WARRIORS",
-    image: "/KIMO--POTRAIT-cover---.jpg",
-    network: "",
-    subtitle: "Life and culture of the Masai people",
-    rating: "4.9",
-  },
+ 
   {
     category: "Documentary",
     title: "THE CLASSROOM",
@@ -143,7 +136,7 @@ const podcastContent: ContentCard[] = [
     subtitle: "Stories from across the continent",
     rating: "4.8",
     description:
-      "Join us as we explore the rich tapestry of African cultures, traditions, and contemporary issues through engaging conversations with thought leaders, artists, and changemakers from across the continent. Each episode offers unique insights into the diverse experiences that shape African identity today. Our podcast aims to amplify authentic African voices and perspectives that are often overlooked in mainstream media.",
+      "Skywalker, Lord Herry, na Fundi Bishoo wanapokaa pamoja, hakuna mada inayobaki mezani! Kutoka kwa wanawake na mahusiano hadi urafiki, maisha ya mtaa, na kanuni zisizoandikwa za wanaume—Round UP 2.0 inaleta mijadala ya kufurahisha kama ilivyo kwenye vijiwe vya wanaume, lakini sasa moja kwa moja kwenye skrini yako.Vichekesho, ukweli mchungu, na maoni yasiyochujwa—hii ni sehemu ambayo wanaume wanasema kilicho mioyoni mwao bila kuficha! Uko tayari kwa mazungumzo halisi?",
   },
   // {
   //   category: "Podcast",

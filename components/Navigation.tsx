@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 interface NavigationProps {
   onPricingClick?: () => void;
@@ -16,6 +17,18 @@ export default function Navigation({
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,8 +102,9 @@ export default function Navigation({
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700"
+            className="md:hidden p-2 rounded-md text-white hover:text-[#F27321] transition-colors"
             onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
           >
             <svg
               className="h-6 w-6"
@@ -109,33 +123,65 @@ export default function Navigation({
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => {
-                link.onClick?.();
-                setMobileMenuOpen(false);
-              }}
-              className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                pathname === link.href
-                  ? "text-[#F27321]"
-                  : "text-white hover:text-[#F27321]"
-              }`}
-            >
-              {link.name}
-            </button>
-          ))}
-          {/* <Link
-            href="/login"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#F27321]"
-          >
-            Login
-          </Link> */}
+      {/* Mobile menu - Full screen overlay */}
+      {isOpen && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          {/* Background overlay */}
+          <div className="fixed inset-0 bg-black/95 backdrop-blur-md"></div>
+
+          {/* Menu content */}
+          <div className="relative h-full flex flex-col">
+            {/* Header with close button */}
+            <div className="flex items-center justify-between p-4">
+              <Link
+                href="/"
+                className="flex items-center space-x-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <img
+                  src="/splash-icon-dark.png"
+                  alt="Logo"
+                  className="h-14 w-auto"
+                />
+                <h1 className="text-white text-2xl font-bold">SNS Premium</h1>
+              </Link>
+
+              <button
+                className="p-2 text-white hover:text-[#F27321] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Navigation links */}
+            <div className="flex-1 flex flex-col justify-center px-4">
+              <div className="space-y-8">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.name}
+                    onClick={() => {
+                      link.onClick?.();
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block w-full text-center text-2xl font-medium text-white hover:text-[#F27321] transition-colors py-4"
+                  >
+                    {link.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="p-6 text-center">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} SNS Premium
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
