@@ -20,8 +20,9 @@ export default function DeleteAccount() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [deletionStatus, setDeletionStatus] = useState<
-    "deleting" | "success" | null
+    "deleting" | "success" | "error" | null
   >(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -34,8 +35,75 @@ export default function DeleteAccount() {
       setShowModal(true);
       setDeletionStatus("deleting");
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      // Get auth token from localStorage or cookies
+      const token = localStorage.getItem("token") || "";
+
+      if (!token) {
+        setErrorMessage("You need to be logged in to delete your account");
+        setDeletionStatus("error");
+        return;
+      }
+
+      const response = await fetch(
+        "https://staging-api.snspremium.co.tz/api/settings/account/delete",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ email: data.email }),
+          credentials: "include", // Include cookies in the request
+        }
+      );
+
+      let responseData;
+      try {
+        responseData = await response.json();
+      } catch (e) {
+        // If response isn't valid JSON
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+      }
+
+      if (!response.ok) {
+        // Handle different error response formats
+        let errorMessage = "Failed to delete account";
+
+        if (responseData) {
+          if (responseData.errorMessage) {
+            errorMessage = responseData.errorMessage;
+          } else if (typeof responseData === "string") {
+            errorMessage = responseData;
+          } else if (
+            responseData.message &&
+            typeof responseData.message === "string"
+          ) {
+            errorMessage = responseData.message;
+          } else if (
+            responseData.error &&
+            typeof responseData.error === "string"
+          ) {
+            errorMessage = responseData.error;
+          } else {
+            // Try to stringify the object for debugging
+            try {
+              errorMessage = JSON.stringify(responseData);
+            } catch (e) {
+              // If circular reference or other JSON error
+              errorMessage = "Unknown error occurred";
+            }
+          }
+        }
+
+        // Special handling for 401 Unauthorized
+        if (response.status === 401) {
+          errorMessage = "Authentication required. Please log in again.";
+        }
+
+        throw new Error(errorMessage);
+      }
 
       setDeletionStatus("success");
 
@@ -45,7 +113,17 @@ export default function DeleteAccount() {
       }, 2000);
     } catch (error) {
       console.error("Error deleting account:", error);
-      setShowModal(false);
+      setErrorMessage(
+        error instanceof Error ? error.message : "An unknown error occurred"
+      );
+      setDeletionStatus("error");
+
+      // Hide error message after 5 seconds
+      setTimeout(() => {
+        setShowModal(false);
+        setDeletionStatus(null);
+        setErrorMessage("");
+      }, 5000);
     }
   };
 
@@ -67,6 +145,16 @@ export default function DeleteAccount() {
             </p>
             <p className="text-sm text-gray-400">
               Please wait while we process your request
+            </p>
+          </div>
+        ) : deletionStatus === "error" ? (
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 mx-auto bg-red-500/20 rounded-full flex items-center justify-center">
+              <XCircleIcon className="w-10 h-10 text-red-500" />
+            </div>
+            <p className="text-lg font-medium text-white">Error</p>
+            <p className="text-sm text-gray-400">
+              {errorMessage || "Failed to delete account. Please try again."}
             </p>
           </div>
         ) : (

@@ -32,9 +32,9 @@ export default function Footer() {
       links: [
         { name: "Help Center", href: "#" },
         { name: "Streaming Guide", href: "#" },
-        { name: "Terms", href: "/app/terms-conditions" },
-        { name: "Privacy", href: "/app/privacy-policy" },
-        { name: "Copyright", href: "/app/copyright" },
+        { name: "Terms", href: "/terms-conditions" },
+        { name: "Privacy", href: "/privacy-policy" },
+        { name: "Copyright", href: "/copyright" },
       ],
     },
     {
@@ -145,19 +145,19 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               <Link
-                href="/app/privacy-policy"
+                href="/privacy-policy"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/app/terms-conditions"
+                href="/terms-conditions"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Terms & Conditions
               </Link>
               <Link
-                href="/app/copyright"
+                href="/copyright"
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Copyright
