@@ -35,6 +35,7 @@ export default function Footer() {
         { name: "Terms", href: "/terms-conditions" },
         { name: "Privacy", href: "/privacy-policy" },
         { name: "Copyright", href: "/copyright" },
+        { name: "Customer Support", href: "/customer-support" },
       ],
     },
     {
@@ -161,6 +162,12 @@ export default function Footer() {
                 className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
               >
                 Copyright
+              </Link>
+              <Link
+                href="/customer-support"
+                className="text-gray-400 hover:text-[#F27321] text-sm transition-colors duration-300"
+              >
+                Customer Support
               </Link>
             </div>
           </div>
